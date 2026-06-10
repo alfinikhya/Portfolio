@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Space+Grotesk:wght@300..700&family=Playfair+Display:ital,wght@0,400..700;1,400..700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  /* Custom responsive animations and colors inside Tailwind 4 */
+  --color-brand-50: #fbfbf9; /* Crisp clean offwhite-base matched to screenshot */
+  --color-brand-100: #f5f4ef; /* Light grey paper card background */
+  --color-brand-200: #e5e3da;
+  --color-brand-300: #d5d1c5;
+  --color-brand-400: #b5ad98;
+  --color-brand-500: #8c8269;
+  --color-brand-600: #6e654e;
+  --color-brand-700: #544d3b;
+  --color-brand-800: #2c281e;
+  --color-brand-900: #141310;
+  --color-brand-primary: #df4d10; /* Precise vibrant orange color matched to buttons in screenshot */
+}
+
+/* Base resets & styled selections */
+::selection {
+  background-color: var(--color-brand-primary);
+  color: #ffffff;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+}
+
+/* Custom linear gradient animations and glassmorphism helpers */
+.glass-effect-dark {
+  background: rgba(18, 20, 22, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-effect-light {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+/* Infinite sliding keyframes for Marquee without using large script computations */
+@keyframes slide-infinite-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee-left {
+  animation: slide-infinite-left 35s linear infinite;
+}
+
+.animate-marquee-left:hover {
+  animation-play-state: paused;
+}
+
+/* Dot matrix background commonly seen in LineaDS and Framer */
+.dot-matrix-dark {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1.2px, transparent 1.2px);
+  background-size: 24px 24px;
+}
+
+.dot-matrix-light {
+  background-image: radial-gradient(rgba(0, 0, 0, 0.04) 1.2px, transparent 1.2px);
+  background-size: 24px 24px;
+}
+
+/* Custom scrollbar layout */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #343a40;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-brand-primary);
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #495057;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: var(--color-brand-primary);
+}

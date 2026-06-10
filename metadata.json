@@ -1,0 +1,6 @@
+{
+  "name": "Design Agency Portfolio",
+  "description": "A premium, ultra-polished portfolio agency website inspired by Framer design templates like LineaDS. Fully responsive, featuring dark/light modes, animations, and highly structured interactive components.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
